@@ -1,5 +1,5 @@
 from postgres.database import async_engine, Base
-from postgres import models
+from src.postgres import models
 import asyncio
 
 
