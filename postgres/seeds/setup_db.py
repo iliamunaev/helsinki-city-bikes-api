@@ -1,4 +1,4 @@
-from postgres.db import async_engine, Base
+from postgres.database import async_engine, Base
 from postgres import models
 import asyncio
 
