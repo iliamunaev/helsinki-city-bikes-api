@@ -1,7 +1,13 @@
+import os
+
 import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
+from dotenv import load_dotenv
 
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 def add_data_to_db(file, t_name, engine):
     try:
@@ -17,7 +23,7 @@ def add_data_to_db(file, t_name, engine):
 if __name__ == '__main__':
     csv_files = ['data/trips.csv', 'data/stations.csv']
     table_names = ['trips', 'stations']
-    engine = create_engine("postgresql://postgres:postgres@localhost/helsinkibikes")
+    engine = create_engine(DATABASE_URL)
 
     for file, t_name in zip(csv_files, table_names):
         add_data_to_db(file, t_name, engine)
