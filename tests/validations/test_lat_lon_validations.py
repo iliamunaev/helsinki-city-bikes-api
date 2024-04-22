@@ -1,7 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
-from postgres.models import Station
+from src.postgres.models import Station
 
 
 @pytest.mark.parametrize(
