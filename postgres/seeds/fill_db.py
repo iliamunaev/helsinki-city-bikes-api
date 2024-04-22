@@ -7,7 +7,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv("DB_SETUP_URL")
+
 
 def add_data_to_db(file, t_name, engine):
     try:
@@ -21,7 +22,7 @@ def add_data_to_db(file, t_name, engine):
 
 
 if __name__ == '__main__':
-    csv_files = ['data/trips.csv', 'data/stations.csv']
+    csv_files = ['../data/trips.csv', '../data/stations.csv']
     table_names = ['trips', 'stations']
     engine = create_engine(DATABASE_URL)
 
