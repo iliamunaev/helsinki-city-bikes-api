@@ -13,4 +13,7 @@ class StationsRepository:
         )
         return dict(record) if record else None
 
+    async def get_stations_names(self):
+        records = await self.pool.fetch("SELECT station_name FROM stations")
+        return [dict(record) for record in records]
 
