@@ -1,7 +1,5 @@
-import dotenv
 from dotenv import load_dotenv
-from fastapi import Path
-from pydantic.v1 import BaseSettings
+from pydantic_settings import BaseSettings
 
 load_dotenv()
 
@@ -31,3 +29,15 @@ class AppSettings(BaseSettings):
 
     class Config:
         case_sensitive = False
+
+
+class TestPostgresSettings(BaseSettings):
+    PG_HOST: str = 'localhost'
+    PG_USER: str = 'postgres'
+    PG_PASSWORD: str = 'postgres'
+    PG_DATABASE: str = 'helsinkibikes'
+    PG_PORT: int = 5437
+
+    class Config:
+        case_sensitive = False
+        env_prefix = "TEST_"
