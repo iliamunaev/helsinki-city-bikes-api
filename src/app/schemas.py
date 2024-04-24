@@ -42,3 +42,7 @@ class Trip(BaseModel):
     speed_avg_km_h: int
     air_temperature_deg_c: int
 
+
+class StationName(BaseModel):
+    station_name: str
+
