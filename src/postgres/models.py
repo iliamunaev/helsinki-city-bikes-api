@@ -1,5 +1,8 @@
 from sqlalchemy import Column, ForeignKey, SmallInteger, String, Float
-from postgres.database import Base
+
+from src.postgres.database import Base
+
+
 #  SQLAlchemy ORM Models
 
 
