@@ -9,3 +9,8 @@ class StationsService:
 
     async def get_station_by_id(self, station_id: int):
         return await self.stations_repo.get_station_by_id(station_id=station_id)
+
+    async def get_stations_names(self):
+        return await self.stations_repo.get_stations_names()
+
+
