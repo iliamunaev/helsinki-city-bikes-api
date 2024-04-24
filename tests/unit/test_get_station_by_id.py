@@ -15,7 +15,6 @@ async def test_get_station_by_id(station_id, expected_output, mocker):
     mock_fetchrow = AsyncMock()
     mock_pool.fetchrow = mock_fetchrow
 
-    # Set the expected fetchrow result
     mock_fetchrow.return_value = expected_output
 
     repo = StationsRepository(pool=mock_pool)
