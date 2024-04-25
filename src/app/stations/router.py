@@ -2,9 +2,10 @@ from typing import List
 
 from fastapi import HTTPException, Depends, APIRouter
 
-from src.app.trips.schemas import Station, StationName
+from src.app.stations.models import Station
+from src.app.stations.schemas import StationName
 from src.app.stations.servises import StationsService
-from src.depends import get_stations_service
+from src.app.stations.dependencies import get_stations_service
 
 router = APIRouter()
 
