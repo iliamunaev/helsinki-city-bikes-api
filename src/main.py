@@ -1,7 +1,7 @@
 import asyncpg
 from fastapi import FastAPI
-from .settings import AppSettings, PostgresSettings
-from .stations.routers import router as stations_router
+from src.app.settings import AppSettings, PostgresSettings
+from src.app.stations.router import router as stations_router
 
 
 async def setup_pg_pool(app: FastAPI) -> None:
@@ -24,6 +24,9 @@ def start_up_app(settings: AppSettings) -> FastAPI:
     async def shutdown() -> None:
         await app.state.pool.close()
 
-    app.include_router(stations_router)
+    app.include_router(stations_router, prefix="/stations")
+
+   # api_router.include_router(users.router, prefix="/users", tags=["users"])
+
 
     return app
