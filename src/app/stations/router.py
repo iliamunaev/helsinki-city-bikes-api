@@ -2,7 +2,7 @@ from typing import List
 
 from fastapi import HTTPException, Depends, APIRouter
 
-from src.app.schemas import Station, StationName
+from src.app.trips.schemas import Station, StationName
 from src.app.stations.servises import StationsService
 from src.depends import get_stations_service
 
