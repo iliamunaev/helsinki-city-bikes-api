@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, SmallInteger, String, Float
+from sqlalchemy import Column, SmallInteger, String, Float
 from sqlalchemy.orm import declarative_base
 
 #  SQLAlchemy ORM Models
