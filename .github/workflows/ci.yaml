@@ -30,9 +30,12 @@ jobs:
       - name: Install dependencies
         run: poetry install --no-interaction --no-root
 
-      # run linter and unit tests
+      # run linter, Black, unit tests
       - name: Run linter
         run: poetry run ruff check .
 
       - name: Run unit tests
         run: poetry run pytest -v tests
+
+      - name: Run Black
+        run: poetry run black --check .
