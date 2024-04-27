@@ -1,6 +1,6 @@
 import asyncpg
 
-from src.postgres.repository import StationsRepository
+from ...repositories.postgres.repository import StationsRepository
 
 
 class StationsService:
@@ -12,5 +12,3 @@ class StationsService:
 
     async def get_stations_names(self):
         return await self.stations_repo.get_stations_names()
-
-

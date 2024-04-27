@@ -1,5 +1,5 @@
 from postgres.database import async_engine
-from src.app.stations import models
+from src.app.api.stations import models
 import asyncio
 
 
@@ -12,6 +12,7 @@ async def create_all_tables():
             print("Tables created successfully.")
     except Exception as e:
         print(f"An error occurred: {e}")
+
 
 if __name__ == "__main__":
     asyncio.run(create_all_tables())

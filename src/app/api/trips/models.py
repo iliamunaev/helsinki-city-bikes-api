@@ -10,8 +10,12 @@ class Trip(Base):
     __tablename__ = "trips"
 
     trip_id = Column(SmallInteger, primary_key=True, nullable=False)
-    departure_station_id = Column(SmallInteger, ForeignKey("stations.station_id"), nullable=False)
-    return_station_id = Column(SmallInteger, ForeignKey("stations.station_id"), nullable=False)
+    departure_station_id = Column(
+        SmallInteger, ForeignKey("stations.station_id"), nullable=False
+    )
+    return_station_id = Column(
+        SmallInteger, ForeignKey("stations.station_id"), nullable=False
+    )
     departure_year = Column(SmallInteger)
     departure_month = Column(String(9))
     departure_day = Column(SmallInteger)

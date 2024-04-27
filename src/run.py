@@ -1,7 +1,7 @@
 import uvicorn
 
-from src.app.settings import AppSettings
-from src.main import start_up_app
+from app.settings import AppSettings
+from main import start_up_app
 
 app_settings = AppSettings()
 

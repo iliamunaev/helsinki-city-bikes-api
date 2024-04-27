@@ -3,6 +3,7 @@ from pydantic import BaseModel
 
 # Pydantic models for the API
 
+
 class Trip(BaseModel):
     trip_id: int
     departure_station_id: int
@@ -25,4 +26,3 @@ class Trip(BaseModel):
 
 class StationName(BaseModel):
     station_name: str
-
