@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import AsyncMock
 
-from src.postgres.repository import StationsRepository
+from src.app.repositories.postgres.repository import StationsRepository
 
 
 @pytest.mark.asyncio

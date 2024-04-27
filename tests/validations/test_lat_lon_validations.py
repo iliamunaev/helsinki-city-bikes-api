@@ -1,7 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
-from src.app.stations.schemas import Station
+from src.app.api.stations.schemas import Station
 
 
 @pytest.mark.parametrize(
