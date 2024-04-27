@@ -10,7 +10,10 @@ async def test_get_stations_names():
     mock_fetch = AsyncMock()
     mock_pool.fetch = mock_fetch
 
-    expected_records = [{"station_name": "Station One"}, {"station_name": "Station Two"}]
+    expected_records = [
+        {"station_name": "Station One"},
+        {"station_name": "Station Two"},
+    ]
     mock_fetch.return_value = expected_records
 
     # Initialize the repository with the mock pool
