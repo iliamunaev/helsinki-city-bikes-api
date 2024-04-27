@@ -13,6 +13,10 @@ pytest = "^8.1.1"
 ruff = "^0.4.2"
 asyncpg = "^0.29.0"
 psycopg2-binary = "^2.9.9"
+python-dotenv = "^1.0.1"
+pydantic-settings = "^2.2.1"
+sqlalchemy = "^2.0.29"
+black = "^24.4.2"
 
 
 [tool.poetry.group.dev.dependencies]
