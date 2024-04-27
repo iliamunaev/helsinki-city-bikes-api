@@ -176,3 +176,4 @@ pyrightconfig.json
 # End of https://www.toptal.com/developers/gitignore/api/python
 /.idea/
 /src/app/repositories/postgres/data/
+/src/app/repositories/postgres/seeds/
