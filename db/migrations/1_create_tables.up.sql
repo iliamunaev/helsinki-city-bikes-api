@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS stations (
 );
 
 -- Create indexes for the stations table
-CREATE INDEX IF NOT EXISTS stations_name_idx ON stations (station_name);
+CREATE UNIQUE INDEX IF NOT EXISTS stations_name_idx ON stations (station_name);
 CREATE INDEX IF NOT EXISTS stations_geog_idx ON stations USING GIST(geog);
 
 -- Create trips table with foreign key constraints
@@ -36,14 +36,14 @@ CREATE TABLE IF NOT EXISTS trips (
 );
 
 -- Create indexes for the trips table to enhance query performance
-CREATE INDEX IF NOT EXISTS trips_departure_station_id_idx ON trips (departure_station_id);
+CREATE UNIQUE INDEX IF NOT EXISTS trips_departure_station_id_idx ON trips (departure_station_id);
 CREATE INDEX IF NOT EXISTS trips_departure_year_idx ON trips (departure_year);
 CREATE INDEX IF NOT EXISTS trips_departure_month_idx ON trips (departure_month);
 CREATE INDEX IF NOT EXISTS trips_departure_day_idx ON trips (departure_day);
 CREATE INDEX IF NOT EXISTS trips_departure_hour_idx ON trips (departure_hour);
 CREATE INDEX IF NOT EXISTS trips_departure_weekday_idx ON trips (departure_weekday);
 
-CREATE INDEX IF NOT EXISTS trips_return_station_id_idx ON trips (return_station_id);
+CREATE UNIQUE INDEX IF NOT EXISTS trips_return_station_id_idx ON trips (return_station_id);
 CREATE INDEX IF NOT EXISTS trips_return_year_idx ON trips (return_year);
 CREATE INDEX IF NOT EXISTS trips_return_month_idx ON trips (return_month);
 CREATE INDEX IF NOT EXISTS trips_return_day_idx ON trips (return_day);
