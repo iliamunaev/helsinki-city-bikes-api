@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_USER: helsinkibikes
+      POSTGRES_PASSWORD: helsinkibikes
+      POSTGRES_DB: helsinkibikes
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend
+
+  migrate:
+    image: migrate/migrate
+    depends_on:
+      - postgres
+    volumes:
+      - ./migrations:/migrations
+    command: [
+      "-path",
+      "/migrations",
+      "-database",
+      "postgres://helsinkibikes:helsinkibikes@postgres/helsinkibikes?sslmode=disable",
+      "up"
+    ]
+    restart: on-failure
+    networks:
+      - backend
+
+volumes:
+  postgres_data:
