@@ -8,6 +8,8 @@ services:
       POSTGRES_DB: helsinkibikes
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    ports:
+        - "5433:5432"
     networks:
       - backend
 
@@ -16,7 +18,7 @@ services:
     depends_on:
       - postgres
     volumes:
-      - ./migrations:/migrations
+      - ./db/migrations:/migrations
     command: [
       "-path",
       "/migrations",
@@ -30,3 +32,8 @@ services:
 
 volumes:
   postgres_data:
+  migrations:
+
+networks:
+  backend:
+    driver: bridge
